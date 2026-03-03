@@ -1,0 +1,41 @@
+.page {
+  max-width: 700px;
+  margin: 0 auto;
+  padding: 3rem 1.5rem;
+}
+
+.title {
+  font-size: 2rem;
+  color: var(--color-burgundy);
+  margin-bottom: 1.5rem;
+}
+
+.text {
+  font-size: 1.05rem;
+  line-height: 1.8;
+  color: var(--color-black);
+  margin-bottom: 3rem;
+}
+
+.map {
+  padding: 2rem;
+  border: 1px solid var(--color-light-gray);
+  border-radius: 8px;
+}
+
+.map h2 {
+  font-size: 1.1rem;
+  color: var(--color-burgundy);
+  margin-bottom: 0.75rem;
+}
+
+.mapLink {
+  display: inline-block;
+  margin-top: 0.75rem;
+  color: var(--color-crimson);
+  font-weight: 500;
+}
+
+.mapLink:hover {
+  text-decoration: underline;
+}
