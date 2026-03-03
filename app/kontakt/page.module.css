@@ -1,0 +1,75 @@
+.page {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: 3rem 1.5rem;
+}
+
+.title {
+  font-size: 2rem;
+  color: var(--color-burgundy);
+  margin-bottom: 2rem;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.5rem;
+}
+
+.card {
+  padding: 2rem;
+  border: 1px solid var(--color-light-gray);
+  border-radius: 8px;
+}
+
+.card h2 {
+  font-size: 1rem;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  color: var(--color-burgundy);
+  margin-bottom: 0.75rem;
+}
+
+.hoursCard {
+  grid-column: 1 / -1;
+}
+
+.phone {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: var(--color-crimson);
+}
+
+.phone:hover {
+  text-decoration: underline;
+}
+
+.link {
+  display: inline-block;
+  margin-top: 0.5rem;
+  color: var(--color-crimson);
+  font-weight: 500;
+}
+
+.link:hover {
+  text-decoration: underline;
+}
+
+.hourRow {
+  display: flex;
+  justify-content: space-between;
+  padding: 0.4rem 0;
+  font-size: 0.95rem;
+  max-width: 400px;
+}
+
+.today {
+  font-weight: 700;
+  color: var(--color-crimson);
+}
+
+@media (max-width: 768px) {
+  .grid {
+    grid-template-columns: 1fr;
+  }
+}
