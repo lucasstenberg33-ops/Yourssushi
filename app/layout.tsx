@@ -1,25 +1,25 @@
-import type { Metadata } from "next";
-import { Inter } from "next/font/google";
-import "./globals.css";
-
-const inter = Inter({
-  subsets: ["latin"],
-});
+import type { Metadata } from 'next';
+import Navbar from '@/components/Navbar';
+import Footer from '@/components/Footer';
+import './globals.css';
 
 export const metadata: Metadata = {
-  title: "Yours Sushi & Woks",
-  description: "Yours Sushi & Woks",
+  title: 'Yours Sushi & Woks – Sushi och Wok i Södermalm',
+  description:
+    'Yours Sushi & Woks på Tegelviksgatan 45, Södermalm. Färsk sushi, poke bowls och wokrätter. Ring 08-641 75 05 för beställning.',
 };
 
 export default function RootLayout({
   children,
-}: Readonly<{
+}: {
   children: React.ReactNode;
-}>) {
+}) {
   return (
     <html lang="sv">
-      <body className={inter.className}>
-        {children}
+      <body>
+        <Navbar />
+        <main>{children}</main>
+        <Footer />
       </body>
     </html>
   );
