@@ -1,5 +1,6 @@
 import { NextResponse } from 'next/server';
-import { getSessionCookie } from '@/lib/auth';
+
+export const runtime = 'edge';
 
 export async function POST(request: Request) {
   const { password } = await request.json();
@@ -9,7 +10,12 @@ export async function POST(request: Request) {
   }
 
   const response = NextResponse.json({ success: true });
-  const cookie = getSessionCookie();
-  response.cookies.set(cookie.name, cookie.value, cookie);
+  response.cookies.set('admin_session', 'authenticated', {
+    httpOnly: true,
+    secure: process.env.NODE_ENV === 'production',
+    sameSite: 'lax',
+    maxAge: 60 * 60 * 8,
+    path: '/',
+  });
   return response;
 }

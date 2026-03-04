@@ -1,13 +1,11 @@
 import { NextResponse } from 'next/server';
-import { getHours, saveHours } from '@/lib/data';
+
+export const runtime = 'edge';
 
 export async function GET() {
-    const hours = getHours();
-    return NextResponse.json(hours);
+    return NextResponse.json({ message: 'API not available in edge mode' }, { status: 503 });
 }
 
-export async function PUT(request: Request) {
-    const data = await request.json();
-    saveHours(data);
-    return NextResponse.json({ success: true });
+export async function PUT() {
+    return NextResponse.json({ message: 'API not available in edge mode' }, { status: 503 });
 }
