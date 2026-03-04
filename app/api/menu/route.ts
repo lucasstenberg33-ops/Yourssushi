@@ -1,5 +1,5 @@
 import { NextResponse } from 'next/server';
-import menuData from '@/data/menu.json';
+import menuData from '../../../data/menu.json';
 
 export const runtime = 'edge';
 

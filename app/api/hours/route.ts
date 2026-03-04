@@ -1,5 +1,5 @@
 import { NextResponse } from 'next/server';
-import hoursData from '@/data/hours.json';
+import hoursData from '../../../data/hours.json';
 
 export const runtime = 'edge';
 

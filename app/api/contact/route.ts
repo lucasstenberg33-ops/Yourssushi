@@ -1,5 +1,5 @@
 import { NextResponse } from 'next/server';
-import contactData from '@/data/contact.json';
+import contactData from '../../../data/contact.json';
 
 export const runtime = 'edge';
 
