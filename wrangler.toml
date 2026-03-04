@@ -1,0 +1,8 @@
+name = "yourssushi"
+compatibility_date = "2024-03-04"
+compatibility_flags = ["nodejs_compat"]
+pages_build_output_dir = ".vercel/output/static"
+
+[assets]
+directory = ".vercel/output/static"
+binding = "ASSETS"
