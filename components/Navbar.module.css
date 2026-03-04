@@ -2,15 +2,17 @@
   position: sticky;
   top: 0;
   z-index: 100;
-  background: var(--color-white);
-  border-bottom: 1px solid var(--color-light-gray);
+  background: rgba(244, 238, 231, 0.9);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border-bottom: 1px solid var(--color-border);
   height: var(--nav-height);
 }
 
 .container {
   max-width: var(--max-width);
   margin: 0 auto;
-  padding: 0 1.5rem;
+  padding: 0 var(--container-padding);
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -20,23 +22,48 @@
 .logo {
   display: flex;
   align-items: center;
+  transition: opacity var(--transition);
+}
+
+.logo:hover {
+  opacity: 0.8;
 }
 
 .links {
   display: flex;
   list-style: none;
-  gap: 2rem;
+  gap: 2.5rem;
 }
 
 .link {
-  font-weight: 500;
-  font-size: 0.95rem;
-  transition: color 0.2s;
+  font-weight: 400;
+  font-size: 0.8rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  position: relative;
+  transition: color var(--transition);
+  color: var(--color-text-secondary);
+}
+
+.link::after {
+  content: '';
+  position: absolute;
+  bottom: -4px;
+  left: 0;
+  width: 0;
+  height: 1px;
+  background: var(--color-primary);
+  transition: width var(--transition);
 }
 
 .link:hover,
 .active {
-  color: var(--color-crimson);
+  color: var(--color-text);
+}
+
+.link:hover::after,
+.active::after {
+  width: 100%;
 }
 
 .hamburger {
@@ -46,15 +73,27 @@
   background: none;
   border: none;
   cursor: pointer;
-  padding: 4px;
+  padding: 6px;
 }
 
 .bar {
   display: block;
-  width: 24px;
-  height: 2px;
-  background: var(--color-black);
-  transition: transform 0.3s, opacity 0.3s;
+  width: 22px;
+  height: 1.5px;
+  background: var(--color-text);
+  transition: transform 0.3s ease, opacity 0.3s ease;
+}
+
+.bar.open:first-child {
+  transform: translateY(6.5px) rotate(45deg);
+}
+
+.bar.open:nth-child(2) {
+  opacity: 0;
+}
+
+.bar.open:last-child {
+  transform: translateY(-6.5px) rotate(-45deg);
 }
 
 @media (max-width: 768px) {
@@ -68,11 +107,30 @@
     top: var(--nav-height);
     left: 0;
     right: 0;
-    background: var(--color-white);
+    background: rgba(244, 238, 231, 0.98);
+    backdrop-filter: blur(12px);
     flex-direction: column;
-    padding: 1.5rem;
-    gap: 1rem;
-    border-bottom: 1px solid var(--color-light-gray);
+    padding: 1.5rem var(--container-padding);
+    gap: 0;
+    border-bottom: 1px solid var(--color-border);
+  }
+
+  .links li {
+    border-bottom: 1px solid var(--color-border);
+  }
+
+  .links li:last-child {
+    border-bottom: none;
+  }
+
+  .link {
+    display: block;
+    padding: 1rem 0;
+    font-size: 0.9rem;
+  }
+
+  .link::after {
+    display: none;
   }
 
   .showMenu {

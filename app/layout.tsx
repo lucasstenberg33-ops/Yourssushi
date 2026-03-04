@@ -18,6 +18,7 @@ export default function RootLayout({
   return (
     <html lang="sv">
       <body>
+
         <StructuredData />
         <Navbar />
         <main>{children}</main>

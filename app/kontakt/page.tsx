@@ -1,4 +1,5 @@
 import { getContact, getHours } from '@/lib/data';
+import FadeIn from '@/components/FadeIn';
 import styles from './page.module.css';
 
 const dayMap: Record<string, number> = {
@@ -15,6 +16,8 @@ export default function Kontakt() {
   const contact = getContact() as {
     address: string;
     phone: string;
+    instagram?: string;
+    website?: string;
     googleMapsUrl: string;
   };
   const hours = getHours() as { day: string; hours: string }[];
@@ -22,10 +25,12 @@ export default function Kontakt() {
 
   return (
     <div className={styles.page}>
-      <h1 className={styles.title}>Kontakt</h1>
+      <FadeIn direction="down">
+        <h1 className={styles.title}>Kontakt</h1>
+      </FadeIn>
 
       <div className={styles.grid}>
-        <div className={styles.card}>
+        <FadeIn direction="up" delay={0.1} className={styles.card}>
           <h2>Ring oss</h2>
           <a
             href={`tel:${contact.phone.replace(/[^0-9+]/g, '')}`}
@@ -33,9 +38,9 @@ export default function Kontakt() {
           >
             {contact.phone}
           </a>
-        </div>
+        </FadeIn>
 
-        <div className={styles.card}>
+        <FadeIn direction="up" delay={0.2} className={styles.card}>
           <h2>Besök oss</h2>
           <p>{contact.address}</p>
           <a
@@ -44,11 +49,39 @@ export default function Kontakt() {
             rel="noopener noreferrer"
             className={styles.link}
           >
-            Visa på kartan
+            Visa på kartan →
           </a>
-        </div>
+        </FadeIn>
 
-        <div className={`${styles.card} ${styles.hoursCard}`}>
+        {contact.instagram && (
+          <FadeIn direction="up" delay={0.3} className={styles.card}>
+            <h2>Instagram</h2>
+            <a
+              href={`https://instagram.com/${contact.instagram}`}
+              target="_blank"
+              rel="noopener noreferrer"
+              className={styles.link}
+            >
+              @{contact.instagram}
+            </a>
+          </FadeIn>
+        )}
+
+        {contact.website && (
+          <FadeIn direction="up" delay={0.4} className={styles.card}>
+            <h2>Webbplats</h2>
+            <a
+              href={`https://${contact.website}`}
+              target="_blank"
+              rel="noopener noreferrer"
+              className={styles.link}
+            >
+              {contact.website}
+            </a>
+          </FadeIn>
+        )}
+
+        <FadeIn direction="up" delay={contact.instagram && contact.website ? 0.5 : 0.3} className={`${styles.card} ${styles.hoursCard}`}>
           <h2>Öppettider</h2>
           {hours.map((h) => {
             const isToday = dayMap[h.day] === today;
@@ -62,7 +95,7 @@ export default function Kontakt() {
               </div>
             );
           })}
-        </div>
+        </FadeIn>
       </div>
     </div>
   );

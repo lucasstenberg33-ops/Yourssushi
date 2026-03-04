@@ -4,65 +4,316 @@
       "id": "bowl",
       "name": "Bowl",
       "items": [
-        { "id": "poke-lax", "name": "Poke bowl med lax", "description": "Sushi ris, lax, avocado, sallad och frukt, sesamfrö, chilimayo", "price": 155 },
-        { "id": "poke-tonfisk", "name": "Poke bowl med tonfisk", "description": "Sushi ris, tonfisk, avocado, sallad och frukt, sesamfrö, chilimayo", "price": 155 },
-        { "id": "poke-kyckling", "name": "Poke bowl med friterad kyckling", "description": "Sushi ris, friterad kyckling, avocado, sallad och frukt, sesamfrö, chilimayo", "price": 155 },
-        { "id": "poke-tofu", "name": "Poke bowl med tofu", "description": "Sushi ris, tofu, avocado, sallad och frukt, sesamfrö", "price": 150 },
-        { "id": "tempura-bowl", "name": "Tempura bowl", "description": "Sushi ris, friterad scampi, avocado, sallad och frukt, sesamfrö, chilimayo", "price": 160 }
+        {
+          "id": "poke-lax",
+          "name": "Poke bowl med lax",
+          "description": "Sushi ris, lax, avocado, sallad och frukt, sesamfrö, chilimayo",
+          "price": 155,
+          "tags": [
+            "recommended"
+          ]
+        },
+        {
+          "id": "poke-tonfisk",
+          "name": "Poke bowl med tonfisk",
+          "description": "Sushi ris, tonfisk, avocado, sallad och frukt, sesamfrö, chilimayo",
+          "price": 155,
+          "tags": []
+        },
+        {
+          "id": "poke-kyckling",
+          "name": "Poke bowl med friterad kyckling",
+          "description": "Sushi ris, friterad kyckling, avocado, sallad och frukt, sesamfrö, chilimayo",
+          "price": 155,
+          "tags": []
+        },
+        {
+          "id": "poke-tofu",
+          "name": "Poke bowl med tofu",
+          "description": "Sushi ris, tofu, avocado, sallad och frukt, sesamfrö",
+          "price": 150,
+          "tags": [
+            "vegetarian"
+          ]
+        },
+        {
+          "id": "tempura-bowl",
+          "name": "Tempura bowl",
+          "description": "Sushi ris, friterad scampi, avocado, sallad och frukt, sesamfrö, chilimayo",
+          "price": 160,
+          "tags": [
+            "recommended"
+          ]
+        }
       ]
     },
     {
       "id": "varmratter",
       "name": "Varmrätter",
       "items": [
-        { "id": "yakiniku", "name": "Yakiniku", "description": "Strimlad entrecote", "price": 145 },
-        { "id": "yakitori", "name": "Yakitori", "description": "5st kycklingspett med sojasås", "price": 125 },
-        { "id": "saty-gai", "name": "Saty gai", "description": "5st kycklingspett med Yours homemade jordnötssås", "price": 125 }
+        {
+          "id": "yakiniku",
+          "name": "Yakiniku",
+          "description": "Strimlad entrecote",
+          "price": 145,
+          "tags": [
+            "recommended"
+          ]
+        },
+        {
+          "id": "yakitori",
+          "name": "Yakitori",
+          "description": "5st kycklingspett med sojasås",
+          "price": 125,
+          "tags": []
+        },
+        {
+          "id": "saty-gai",
+          "name": "Saty gai",
+          "description": "5st kycklingspett med Yours homemade jordnötssås",
+          "price": 125,
+          "tags": []
+        }
       ]
     },
     {
       "id": "wok",
       "name": "Wok & Varmrätter",
       "items": [
-        { "id": "friterad-kyckling-sweetchili", "name": "Friterad kyckling med sweet chili sås", "description": "", "price": 135 },
-        { "id": "curry-kyckling", "name": "Curry kyckling", "description": "Röd curry gryta med kokosmjölk och blandade grönsaker och kyckling", "price": 135 },
-        { "id": "cashew-kyckling", "name": "Cashew kyckling", "description": "Wokad kyckling med cashewnötter och blandade grönsaker", "price": 135 },
-        { "id": "general-tsos", "name": "General Tso's chicken", "description": "Krispig torrfriterade kycklingbitar med sursås (Yours homemade), vitlök, chili och grönsaker", "price": 135 },
-        { "id": "hongkong-chicken", "name": "Hongkong chicken", "description": "Krispig torrfriterade kycklingbitar med sötsursås (Yours homemade) och grönsaker", "price": 135 },
-        { "id": "kyckling-bbq", "name": "Kyckling BBQ-sås", "description": "Krispig torrfriterade kycklingbitar med BBQ-sås och grönsaker, vitlök", "price": 135 },
-        { "id": "cashew-scampi", "name": "Cashew med scampi", "description": "Wokad scampi med cashewnötter och blandade grönsaker", "price": 155 },
-        { "id": "hot-basilika-biff", "name": "Hot basilika med biff", "description": "Wokad basilika med biff och blandade grönsaker och vitlök", "price": 145 },
-        { "id": "knaprig-anka", "name": "Knaprig anka", "description": "Serveras med blandade grönsaker samt ris", "price": 160 },
-        { "id": "pad-thai-kyckling", "name": "Pad thai med kyckling", "description": "Stekt risnudlar med kyckling och ägg, blandade grönsaker", "price": 145 },
-        { "id": "aggnudlar", "name": "Äggnudlar med tofu/kyckling", "description": "Stekt äggnudlar med tofu/kyckling och ägg, blandade grönsaker", "price": 135 },
-        { "id": "chaofan-kyckling", "name": "Chaofan med kyckling", "description": "Stekt ris med kyckling och ägg, blandade grönsaker", "price": 135 },
-        { "id": "svartabonor-kyckling", "name": "Svartabönor kyckling", "description": "Wokad kyckling med vitlök, grönsaker och svartabönor, chili", "price": 135 },
-        { "id": "thai-chili-kyckling", "name": "Thai chili kyckling", "description": "Wokad kyckling med thai chili och grönsaker", "price": 135 },
-        { "id": "sichuan-kyckling", "name": "Sichuan kyckling", "description": "Wokad kyckling med sichuan chili, vitlök och grönsaker", "price": 135 }
+        {
+          "id": "friterad-kyckling-sweetchili",
+          "name": "Friterad kyckling med sweet chili sås",
+          "description": "",
+          "price": 135,
+          "tags": []
+        },
+        {
+          "id": "curry-kyckling",
+          "name": "Curry kyckling",
+          "description": "Röd curry gryta med kokosmjölk och blandade grönsaker och kyckling",
+          "price": 135,
+          "tags": [
+            "spicy"
+          ]
+        },
+        {
+          "id": "cashew-kyckling",
+          "name": "Cashew kyckling",
+          "description": "Wokad kyckling med cashewnötter och blandade grönsaker",
+          "price": 135,
+          "tags": []
+        },
+        {
+          "id": "general-tsos",
+          "name": "General Tso's chicken",
+          "description": "Krispig torrfriterade kycklingbitar med sursås (Yours homemade), vitlök, chili och grönsaker",
+          "price": 135,
+          "tags": [
+            "spicy",
+            "recommended"
+          ]
+        },
+        {
+          "id": "hongkong-chicken",
+          "name": "Hongkong chicken",
+          "description": "Krispig torrfriterade kycklingbitar med sötsursås (Yours homemade) och grönsaker",
+          "price": 135,
+          "tags": []
+        },
+        {
+          "id": "kyckling-bbq",
+          "name": "Kyckling BBQ-sås",
+          "description": "Krispig torrfriterade kycklingbitar med BBQ-sås och grönsaker, vitlök",
+          "price": 135,
+          "tags": []
+        },
+        {
+          "id": "cashew-scampi",
+          "name": "Cashew med scampi",
+          "description": "Wokad scampi med cashewnötter och blandade grönsaker",
+          "price": 155,
+          "tags": []
+        },
+        {
+          "id": "hot-basilika-biff",
+          "name": "Hot basilika med biff",
+          "description": "Wokad basilika med biff och blandade grönsaker och vitlök",
+          "price": 145,
+          "tags": [
+            "spicy"
+          ]
+        },
+        {
+          "id": "knaprig-anka",
+          "name": "Knaprig anka",
+          "description": "Serveras med blandade grönsaker samt ris",
+          "price": 160,
+          "tags": [
+            "recommended"
+          ]
+        },
+        {
+          "id": "pad-thai-kyckling",
+          "name": "Pad thai med kyckling",
+          "description": "Stekt risnudlar med kyckling och ägg, blandade grönsaker",
+          "price": 145,
+          "tags": [
+            "recommended"
+          ]
+        },
+        {
+          "id": "aggnudlar",
+          "name": "Äggnudlar med tofu/kyckling",
+          "description": "Stekt äggnudlar med tofu/kyckling och ägg, blandade grönsaker",
+          "price": 135,
+          "tags": []
+        },
+        {
+          "id": "chaofan-kyckling",
+          "name": "Chaofan med kyckling",
+          "description": "Stekt ris med kyckling och ägg, blandade grönsaker",
+          "price": 135,
+          "tags": []
+        },
+        {
+          "id": "svartabonor-kyckling",
+          "name": "Svartabönor kyckling",
+          "description": "Wokad kyckling med vitlök, grönsaker och svartabönor, chili",
+          "price": 135,
+          "tags": [
+            "spicy"
+          ]
+        },
+        {
+          "id": "thai-chili-kyckling",
+          "name": "Thai chili kyckling",
+          "description": "Wokad kyckling med thai chili och grönsaker",
+          "price": 135,
+          "tags": [
+            "spicy"
+          ]
+        },
+        {
+          "id": "sichuan-kyckling",
+          "name": "Sichuan kyckling",
+          "description": "Wokad kyckling med sichuan chili, vitlök och grönsaker",
+          "price": 135,
+          "tags": [
+            "spicy"
+          ]
+        }
       ]
     },
     {
       "id": "sma-ratter",
       "name": "Små rätter",
       "items": [
-        { "id": "varrullar", "name": "Vårrullar", "description": "Friterade vegan vårrullar", "price": "65 / 125", "priceNote": "6st / 12st (med ris)" },
-        { "id": "dumpling", "name": "Dumpling med kyckling / vegetarisk", "description": "", "price": "65 / 125", "priceNote": "5st / 10st (med ris)" },
-        { "id": "sjograssallad", "name": "Sjögrässallad", "description": "", "price": 60 },
-        { "id": "friterad-rakor", "name": "Friterade räkor", "description": "Friterade stora räkor", "price": "85 / 150", "priceNote": "4st / 8st (med ris)" },
-        { "id": "ris", "name": "Ris", "description": "", "price": "35 / 45", "priceNote": "Liten / Stor" },
-        { "id": "nigiri-st", "name": "Nigiri", "description": "", "price": 20, "priceNote": "Per styck" },
-        { "id": "lask", "name": "Läsk", "description": "", "price": 20, "priceNote": "Per styck" }
+        {
+          "id": "varrullar",
+          "name": "Vårrullar",
+          "description": "Friterade vegan vårrullar",
+          "price": "65 / 125",
+          "priceNote": "6st / 12st (med ris)",
+          "tags": [
+            "vegetarian"
+          ]
+        },
+        {
+          "id": "dumpling",
+          "name": "Dumpling med kyckling / vegetarisk",
+          "description": "",
+          "price": "65 / 125",
+          "priceNote": "5st / 10st (med ris)",
+          "tags": []
+        },
+        {
+          "id": "sjograssallad",
+          "name": "Sjögrässallad",
+          "description": "",
+          "price": 60,
+          "tags": [
+            "vegetarian"
+          ]
+        },
+        {
+          "id": "friterad-rakor",
+          "name": "Friterade räkor",
+          "description": "Friterade stora räkor",
+          "price": "85 / 150",
+          "priceNote": "4st / 8st (med ris)",
+          "tags": []
+        },
+        {
+          "id": "ris",
+          "name": "Ris",
+          "description": "",
+          "price": "35 / 45",
+          "priceNote": "Liten / Stor",
+          "tags": [
+            "vegetarian"
+          ]
+        },
+        {
+          "id": "nigiri-st",
+          "name": "Nigiri",
+          "description": "",
+          "price": 20,
+          "priceNote": "Per styck",
+          "tags": []
+        },
+        {
+          "id": "lask",
+          "name": "Läsk",
+          "description": "",
+          "price": 20,
+          "priceNote": "Per styck",
+          "tags": []
+        }
       ]
     },
     {
       "id": "sushi-blandad",
       "name": "Sushi – Blandad sushi",
       "items": [
-        { "id": "sushi-7", "name": "7 bitars", "description": "2 maki och 2 lax, 1 räka, 1 krabba, 1 avocado", "price": 120 },
-        { "id": "sushi-9", "name": "9 bitars", "description": "3 maki och 3 lax, 1 räka, 1 krabba, 1 avocado", "price": 130 },
-        { "id": "sushi-11", "name": "11 bitars", "description": "4 maki och 3 lax, 1 räka, 1 tuna, 1 krabba, 1 avocado", "price": 145 },
-        { "id": "sushi-13", "name": "13 bitars", "description": "5 maki och 4 lax, 1 räka, 1 tuna, 1 krabba, 1 avocado", "price": 175 },
-        { "id": "sushi-15", "name": "15 bitars", "description": "5 maki och 5 lax, 1 räka, 1 tuna, 1 krabba, 2 avocado", "price": 190 }
+        {
+          "id": "sushi-7",
+          "name": "7 bitars",
+          "description": "2 maki och 2 lax, 1 räka, 1 krabba, 1 avocado",
+          "price": 120,
+          "tags": []
+        },
+        {
+          "id": "sushi-9",
+          "name": "9 bitars",
+          "description": "3 maki och 3 lax, 1 räka, 1 krabba, 1 avocado",
+          "price": 130,
+          "tags": []
+        },
+        {
+          "id": "sushi-11",
+          "name": "11 bitars",
+          "description": "4 maki och 3 lax, 1 räka, 1 tuna, 1 krabba, 1 avocado",
+          "price": 145,
+          "tags": [
+            "recommended"
+          ]
+        },
+        {
+          "id": "sushi-13",
+          "name": "13 bitars",
+          "description": "5 maki och 4 lax, 1 räka, 1 tuna, 1 krabba, 1 avocado",
+          "price": 175,
+          "tags": []
+        },
+        {
+          "id": "sushi-15",
+          "name": "15 bitars",
+          "description": "5 maki och 5 lax, 1 räka, 1 tuna, 1 krabba, 2 avocado",
+          "price": 190,
+          "tags": [
+            "recommended"
+          ]
+        }
       ]
     },
     {
@@ -70,12 +321,50 @@
       "name": "Sushi – Mix nigiri",
       "description": "Chilimayo, ålsås, rostad lök, gräslök på",
       "items": [
-        { "id": "mix-nigiri-7", "name": "7 nigiri", "description": "2 rå lax, 2 halstrad lax, 1 räka, 1 krabba, 1 avocado", "price": 125 },
-        { "id": "mix-nigiri-8", "name": "8 nigiri", "description": "2 rå lax, 2 halstrad lax, 1 räka, 1 tuna, 1 krabba, 1 avocado", "price": 140 },
-        { "id": "mix-nigiri-9", "name": "9 nigiri", "description": "2 rå lax, 2 halstrad lax, 2 räka, 1 tuna, 1 krabba, 1 avocado", "price": 145 },
-        { "id": "mix-nigiri-11", "name": "11 nigiri", "description": "3 rå lax, 2 halstrad lax, 2 räka, 1 tuna, 1 krabba, 2 avocado", "price": 160 },
-        { "id": "mix-nigiri-13", "name": "13 nigiri", "description": "4 rå lax, 3 halstrad lax, 2 räka, 1 tuna, 1 krabba, 2 avocado", "price": 180 },
-        { "id": "mix-nigiri-15", "name": "15 nigiri", "description": "4 rå lax, 4 halstrad lax, 2 räka, 1 tuna, 1 krabba, 3 avocado", "price": 200 }
+        {
+          "id": "mix-nigiri-7",
+          "name": "7 nigiri",
+          "description": "2 rå lax, 2 halstrad lax, 1 räka, 1 krabba, 1 avocado",
+          "price": 125,
+          "tags": []
+        },
+        {
+          "id": "mix-nigiri-8",
+          "name": "8 nigiri",
+          "description": "2 rå lax, 2 halstrad lax, 1 räka, 1 tuna, 1 krabba, 1 avocado",
+          "price": 140,
+          "tags": []
+        },
+        {
+          "id": "mix-nigiri-9",
+          "name": "9 nigiri",
+          "description": "2 rå lax, 2 halstrad lax, 2 räka, 1 tuna, 1 krabba, 1 avocado",
+          "price": 145,
+          "tags": [
+            "recommended"
+          ]
+        },
+        {
+          "id": "mix-nigiri-11",
+          "name": "11 nigiri",
+          "description": "3 rå lax, 2 halstrad lax, 2 räka, 1 tuna, 1 krabba, 2 avocado",
+          "price": 160,
+          "tags": []
+        },
+        {
+          "id": "mix-nigiri-13",
+          "name": "13 nigiri",
+          "description": "4 rå lax, 3 halstrad lax, 2 räka, 1 tuna, 1 krabba, 2 avocado",
+          "price": 180,
+          "tags": []
+        },
+        {
+          "id": "mix-nigiri-15",
+          "name": "15 nigiri",
+          "description": "4 rå lax, 4 halstrad lax, 2 räka, 1 tuna, 1 krabba, 3 avocado",
+          "price": 200,
+          "tags": []
+        }
       ]
     },
     {
@@ -83,18 +372,56 @@
       "name": "Sushi – Shake lax nigiri",
       "description": "Halstrad lax nigiri toppad med ålsås, chilimayo",
       "items": [
-        { "id": "shake-8", "name": "8 nigiri", "description": "", "price": 150 },
-        { "id": "shake-9", "name": "9 nigiri", "description": "", "price": 155 },
-        { "id": "shake-11", "name": "11 nigiri", "description": "", "price": 165 },
-        { "id": "shake-13", "name": "13 nigiri", "description": "", "price": 185 },
-        { "id": "shake-15", "name": "15 nigiri", "description": "", "price": 210 }
+        {
+          "id": "shake-8",
+          "name": "8 nigiri",
+          "description": "",
+          "price": 150,
+          "tags": []
+        },
+        {
+          "id": "shake-9",
+          "name": "9 nigiri",
+          "description": "",
+          "price": 155,
+          "tags": []
+        },
+        {
+          "id": "shake-11",
+          "name": "11 nigiri",
+          "description": "",
+          "price": 165,
+          "tags": []
+        },
+        {
+          "id": "shake-13",
+          "name": "13 nigiri",
+          "description": "",
+          "price": 185,
+          "tags": []
+        },
+        {
+          "id": "shake-15",
+          "name": "15 nigiri",
+          "description": "",
+          "price": 210,
+          "tags": []
+        }
       ]
     },
     {
       "id": "sushi-familj",
       "name": "Familje Sushi",
       "items": [
-        { "id": "familj-32", "name": "32 bitars", "description": "14st maki och 18 nigiri (kockens val)", "price": 380 }
+        {
+          "id": "familj-32",
+          "name": "32 bitars",
+          "description": "14st maki och 18 nigiri (kockens val)",
+          "price": 380,
+          "tags": [
+            "recommended"
+          ]
+        }
       ]
     },
     {
@@ -102,14 +429,68 @@
       "name": "Ura Maki & Sashimi",
       "description": "Chilimayo, ålsås, sriracha",
       "items": [
-        { "id": "california-maki", "name": "California maki", "description": "Gurka, ägg, krabba och avocado", "price": 140 },
-        { "id": "friterad-california", "name": "Friterad california maki", "description": "", "price": 150 },
-        { "id": "spicy-tuna-lax", "name": "Spicy tuna / lax", "description": "Avocado och tunfisk/lax, friterad hela maki", "price": 155 },
-        { "id": "teriyaki-maki", "name": "Teriyaki maki", "description": "Avocado insidan och grillad lax utanför", "price": 155 },
-        { "id": "tempura-maki", "name": "Tempura maki", "description": "Friterade tigerräkor och avocado insidan", "price": 155 },
-        { "id": "special-maki", "name": "Special maki", "description": "Avocado, friterade tigerräkor med halstrad lax topping", "price": 185 },
-        { "id": "sashimi-9", "name": "Sashimi 9st", "description": "Rå fisk", "price": 155 },
-        { "id": "sashimi-18", "name": "Sashimi 18st", "description": "Rå fisk", "price": 230 }
+        {
+          "id": "california-maki",
+          "name": "California maki",
+          "description": "Gurka, ägg, krabba och avocado",
+          "price": 140,
+          "tags": []
+        },
+        {
+          "id": "friterad-california",
+          "name": "Friterad california maki",
+          "description": "",
+          "price": 150,
+          "tags": []
+        },
+        {
+          "id": "spicy-tuna-lax",
+          "name": "Spicy tuna / lax",
+          "description": "Avocado och tunfisk/lax, friterad hela maki",
+          "price": 155,
+          "tags": [
+            "spicy"
+          ]
+        },
+        {
+          "id": "teriyaki-maki",
+          "name": "Teriyaki maki",
+          "description": "Avocado insidan och grillad lax utanför",
+          "price": 155,
+          "tags": [
+            "recommended"
+          ]
+        },
+        {
+          "id": "tempura-maki",
+          "name": "Tempura maki",
+          "description": "Friterade tigerräkor och avocado insidan",
+          "price": 155,
+          "tags": []
+        },
+        {
+          "id": "special-maki",
+          "name": "Special maki",
+          "description": "Avocado, friterade tigerräkor med halstrad lax topping",
+          "price": 185,
+          "tags": [
+            "recommended"
+          ]
+        },
+        {
+          "id": "sashimi-9",
+          "name": "Sashimi 9st",
+          "description": "Rå fisk",
+          "price": 155,
+          "tags": []
+        },
+        {
+          "id": "sashimi-18",
+          "name": "Sashimi 18st",
+          "description": "Rå fisk",
+          "price": 230,
+          "tags": []
+        }
       ]
     }
   ]

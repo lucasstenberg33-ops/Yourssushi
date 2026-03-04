@@ -1,16 +1,42 @@
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap');
 
 :root {
-  --color-crimson: #911326;
-  --color-burgundy: #560a20;
-  --color-offwhite: #f8f7f7;
+  /* Light palette */
+  --color-bg: #f4eee7;
+  --color-bg-elevated: #ffffff;
+  --color-bg-card: #FAF6F2;
+  --color-bg-card-hover: #F2EBE3;
+  --color-surface: #EFE9E1;
+
+  /* Brand accents */
+  --color-primary: #6B4331;
+  --color-primary-hover: #5A3525;
+  --color-crimson: #c9243f;
+  --color-gold: #c9a84c;
+
+  /* Text */
+  --color-text: #412f26;
+  --color-text-secondary: #6e5e54;
+  --color-text-muted: #8b7c72;
   --color-white: #ffffff;
-  --color-black: #1a1a1a;
-  --color-gray: #666666;
-  --color-light-gray: #e5e5e5;
-  --font-family: 'Inter', sans-serif;
-  --max-width: 1100px;
-  --nav-height: 64px;
+
+  /* Borders */
+  --color-border: rgba(65, 47, 38, 0.1);
+  --color-border-hover: rgba(65, 47, 38, 0.2);
+
+  /* Typography */
+  --font-body: 'Montserrat', -apple-system, BlinkMacSystemFont, sans-serif;
+  --font-display: 'Cormorant Garamond', Georgia, serif;
+
+  /* Spacing & layout */
+  --max-width: 1140px;
+  --nav-height: 72px;
+  --section-padding: 6rem;
+  --container-padding: 1.5rem;
+
+  /* Transitions */
+  --transition: 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+  --transition-slow: 0.5s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 *,
@@ -23,14 +49,17 @@
 
 html {
   scroll-behavior: smooth;
+  font-size: 16px;
 }
 
 body {
-  font-family: var(--font-family);
-  color: var(--color-black);
-  background-color: var(--color-white);
-  line-height: 1.6;
+  font-family: var(--font-body);
+  color: var(--color-text);
+  background-color: var(--color-bg);
+  line-height: 1.7;
   -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
 }
 
 a {
@@ -41,4 +70,159 @@ a {
 img {
   max-width: 100%;
   height: auto;
+}
+
+/* Utility: container */
+.container {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding-left: var(--container-padding);
+  padding-right: var(--container-padding);
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 5px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--color-bg);
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(255, 255, 255, 0.18);
+}
+
+/* ==========================================================================
+   Image Layouts (Overlapping Gallery)
+   ========================================================================== */
+
+.overlap-gallery {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 1 / 1.1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.overlap-main {
+  position: relative;
+  width: 85%;
+  height: 85%;
+  border-radius: 24px;
+  overflow: hidden;
+  border: 12px solid var(--color-bg);
+  background: var(--color-bg);
+  box-shadow: 0 8px 24px rgba(65, 47, 38, 0.08);
+}
+
+.overlap-main img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.overlap-secondary {
+  position: absolute;
+  width: 55%;
+  border-radius: 24px;
+  /* slightly more rounded for the smaller frame looks good, or match 20px */
+  overflow: hidden;
+  border: 12px solid var(--color-bg);
+  background: var(--color-bg);
+  z-index: 2;
+  box-shadow: 0 8px 30px rgba(65, 47, 38, 0.1);
+}
+
+.overlap-secondary img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* Positioning Variants */
+.overlap-bottom-left {
+  bottom: 0;
+  left: 0;
+}
+
+.overlap-bottom-right {
+  bottom: 0;
+  right: 0;
+}
+
+.overlap-top-left {
+  top: 0;
+  left: 0;
+}
+
+.overlap-top-right {
+  top: 0;
+  right: 0;
+}
+
+/* Aspect Ratios */
+.overlap-square {
+  aspect-ratio: 1;
+}
+
+.overlap-portrait {
+  aspect-ratio: 10 / 13;
+}
+
+.overlap-landscape {
+  aspect-ratio: 4 / 3;
+}
+
+/* Remove previous layout overlay */
+.image-gradient-overlay {
+  display: none;
+}
+
+.framed-image-container img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+  display: block;
+}
+
+.framed-image-container:hover img {
+  transform: scale(1.04);
+}
+
+/* Selection */
+::selection {
+  background: var(--color-primary);
+  color: var(--color-bg);
+}
+
+/* Fade-in animation for page sections */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-in {
+  animation: fadeInUp 0.6s ease-out both;
+}
+
+@media (max-width: 768px) {
+  :root {
+    --section-padding: 3.5rem;
+    --nav-height: 64px;
+  }
 }

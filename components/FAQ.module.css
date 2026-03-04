@@ -1,0 +1,128 @@
+.faqSection {
+    padding: 6rem 0 10rem;
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    padding: 0 var(--container-padding);
+}
+
+.textWrap {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 4rem;
+    text-align: center;
+}
+
+.label {
+    display: none;
+    /* Hide since the page header contextualizes it */
+}
+
+.heading {
+    font-family: var(--font-display);
+    font-size: 2.5rem;
+    font-weight: 500;
+    color: var(--color-text);
+    margin-bottom: 1rem;
+}
+
+.body {
+    display: none;
+    /* Simplified structure by letting the accordion speak for itself */
+}
+
+.accordion {
+    display: flex;
+    flex-direction: column;
+    border-top: 1px solid rgba(107, 67, 49, 0.4);
+}
+
+.item {
+    border-bottom: 1px solid rgba(107, 67, 49, 0.2);
+    padding: 2rem 0;
+    overflow: hidden;
+}
+
+.question {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: transparent;
+    border: none;
+    font-family: var(--font-display);
+    font-size: 1.4rem;
+    font-weight: 400;
+    color: var(--color-text);
+    text-align: left;
+    cursor: pointer;
+    padding: 0;
+    transition: color var(--transition);
+}
+
+.question:hover {
+    color: var(--color-primary);
+}
+
+.icon {
+    font-family: var(--font-body);
+    font-size: 2rem;
+    font-weight: 300;
+    color: var(--color-primary);
+    line-height: 1;
+    transition: transform 0.4s ease;
+}
+
+.open .icon {
+    transform: rotate(45deg);
+}
+
+.answerWrap {
+    transition: max-height 0.4s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.4s ease;
+    opacity: 0;
+}
+
+.open .answerWrap {
+    opacity: 1;
+}
+
+.answer {
+    font-size: 1.1rem;
+    line-height: 1.8;
+    color: var(--color-text-secondary);
+    padding-top: 1.5rem;
+    margin: 0;
+    max-width: 85%;
+}
+
+.open .question {
+    color: var(--color-primary);
+}
+
+@media (max-width: 768px) {
+    .faqSection {
+        padding: 4rem 0 8rem;
+    }
+
+    .heading {
+        font-size: 2.2rem;
+    }
+
+    .question {
+        font-size: 1.25rem;
+        gap: 1.5rem;
+    }
+
+    .answer {
+        font-size: 1.05rem;
+        max-width: 100%;
+    }
+
+    .item {
+        padding: 1.5rem 0;
+    }
+}

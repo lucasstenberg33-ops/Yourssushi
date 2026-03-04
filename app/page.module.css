@@ -1,121 +1,360 @@
 .page {
-  min-height: calc(100vh - var(--nav-height));
+  min-height: 100vh;
 }
 
+/* ─── Hero: Grid Layout ─── */
 .hero {
+  display: grid;
+  grid-template-columns: 1fr 1.2fr;
+  min-height: 60vh;
+  max-width: var(--max-width);
+  margin: 2rem auto 6rem;
+  gap: 4rem;
+  align-items: center;
+  padding: 0 var(--container-padding);
+}
+
+.heroContent {
+  text-align: left;
   display: flex;
   flex-direction: column;
-  align-items: center;
   justify-content: center;
-  padding: 5rem 1.5rem;
-  background: var(--color-offwhite);
-  text-align: center;
 }
 
 .heroLogo {
-  margin-bottom: 1.5rem;
-}
-
-.tagline {
-  font-size: 1.25rem;
-  color: var(--color-gray);
   margin-bottom: 2rem;
+  max-width: 280px;
+  width: 100%;
+  height: auto;
 }
 
-.cta {
+.heroDivider {
+  width: 40px;
+  height: 2px;
+  background: var(--color-primary);
+  margin: 0 0 1.5rem 0;
+}
+
+.heroTagline {
+  font-family: var(--font-display);
+  font-size: 1.6rem;
+  font-weight: 500;
+  color: var(--color-text);
+  margin-bottom: 0.5rem;
+}
+
+.heroLocation {
+  font-size: 0.85rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--color-text-muted);
+  margin-bottom: 2.5rem;
+}
+
+.heroCta {
   display: flex;
   gap: 1rem;
+  justify-content: flex-start;
 }
 
 .ctaPrimary {
-  background: var(--color-crimson);
-  color: var(--color-white);
-  padding: 0.75rem 2rem;
-  border-radius: 6px;
-  font-weight: 600;
-  transition: background 0.2s;
+  background: var(--color-gold);
+  color: #0a0a0a;
+  padding: 0.85rem 2.8rem;
+  font-weight: 500;
+  font-size: 0.75rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  transition: all var(--transition);
 }
 
 .ctaPrimary:hover {
-  background: var(--color-burgundy);
+  background: #d4b35a;
+  transform: translateY(-1px);
 }
 
 .ctaSecondary {
-  border: 2px solid var(--color-crimson);
-  color: var(--color-crimson);
-  padding: 0.75rem 2rem;
+  color: var(--color-primary);
+  padding: 0.85rem 2.8rem;
+  font-size: 0.75rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  transition: all var(--transition);
+  border: 1px solid rgba(107, 67, 49, 0.2);
   border-radius: 6px;
-  font-weight: 600;
-  transition: background 0.2s, color 0.2s;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .ctaSecondary:hover {
-  background: var(--color-crimson);
-  color: var(--color-white);
+  color: var(--color-text);
+  border-color: rgba(107, 67, 49, 0.5);
 }
 
-.info {
-  max-width: var(--max-width);
-  margin: 3rem auto;
-  padding: 0 1.5rem;
+/* ─── Feature Blocks ─── */
+.featureBlock {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: 2rem;
+  max-width: var(--max-width);
+  margin: 0 auto 6rem;
+  gap: 4rem;
+  align-items: center;
+  padding: 0 var(--container-padding);
 }
 
-.infoCard {
-  padding: 2rem;
-  border: 1px solid var(--color-light-gray);
-  border-radius: 8px;
+.featureImageWrap {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 4 / 3;
 }
 
-.infoCard h2 {
-  font-size: 1.1rem;
+.featureImage {
+  object-fit: cover;
+}
+
+.featureTextRight,
+.featureTextLeft {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.featureHeading {
+  font-family: var(--font-display);
+  font-size: 2.5rem;
+  font-weight: 500;
+  color: var(--color-text);
+  margin-bottom: 1.5rem;
+  line-height: 1.2;
+}
+
+.featureBody {
+  font-size: 1.05rem;
+  line-height: 1.7;
+  color: var(--color-text-secondary);
+  margin-bottom: 2rem;
+}
+
+.featureList {
+  list-style: none;
+  margin-bottom: 2.5rem;
+}
+
+.featureList li {
+  display: flex;
+  align-items: center;
+  font-size: 1.05rem;
+  color: var(--color-text-secondary);
   margin-bottom: 1rem;
-  color: var(--color-burgundy);
+}
+
+.checkIcon {
+  margin-right: 0.75rem;
+  color: var(--color-text);
+  font-weight: bold;
+}
+
+.featureBtn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background-color: var(--color-primary);
+  color: var(--color-bg);
+  padding: 0.85rem 2rem;
+  border-radius: 6px;
+  font-size: 0.95rem;
+  font-weight: 500;
+  transition: background-color var(--transition);
+  max-width: max-content;
+  margin-bottom: 2rem;
+}
+
+.featureBtn:hover {
+  background-color: var(--color-primary-hover);
+}
+
+.featureHours {
+  font-size: 0.9rem;
+  color: var(--color-text-muted);
+}
+
+/* ─── Info Section ─── */
+.info {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: 5rem 0;
+  gap: 4rem;
+}
+
+.infoLeft,
+.infoRight {
+  padding: 2.5rem 0;
+}
+
+.hoursGrid {
+  display: flex;
+  flex-direction: column;
 }
 
 .hourRow {
   display: flex;
-  justify-content: space-between;
-  padding: 0.35rem 0;
-  font-size: 0.95rem;
+  align-items: baseline;
+  padding: 0.5rem 0;
+  font-size: 0.9rem;
+  color: var(--color-text-secondary);
+  border-bottom: 1px solid var(--color-border);
+}
+
+.hourRow:last-child {
+  border-bottom: none;
+}
+
+.hourDots {
+  flex: 1;
+  margin: 0 0.75rem;
 }
 
 .today {
-  font-weight: 700;
-  color: var(--color-crimson);
-}
-
-.mapLink,
-.phoneLink {
-  display: block;
-  margin-top: 0.75rem;
-  color: var(--color-crimson);
+  color: var(--color-text);
   font-weight: 500;
 }
 
-.mapLink:hover,
-.phoneLink:hover {
-  text-decoration: underline;
+.heroLogoWrapper {
+  display: flex;
+  width: 260px;
+  height: 145px;
+  /* 260 * (368.64 / 660.48) = ~145.1px */
+  padding: 0;
+  background: transparent;
+  border: 12px solid var(--color-bg);
+  /* Matches exactly the images frame */
+  border-radius: 26px;
+  /* A pixel or two larger to accommodate inner image border radius */
+  margin-bottom: 2.5rem;
+  box-shadow: 0 8px 30px rgba(65, 47, 38, 0.1);
+  overflow: hidden;
+  /* Clips the logo corners to match the border radius smoothly */
+  position: relative;
 }
 
-@media (max-width: 768px) {
-  .hero {
-    padding: 3rem 1.5rem;
+.heroLogo {
+  width: 100%;
+  height: 100%;
+  display: block;
+  /* Removes baseline bottom gap */
+  object-fit: cover;
+}
+
+.heroDivider {
+  display: inline-block;
+  color: var(--color-gold);
+  font-size: 0.8rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.address {
+  font-size: 1.05rem;
+  color: var(--color-text);
+  line-height: 1.6;
+  margin-bottom: 1rem;
+}
+
+.infoLink {
+  display: inline-block;
+  color: var(--color-gold);
+  font-size: 0.8rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  border-bottom: 1px solid rgba(201, 168, 76, 0.3);
+  padding-bottom: 2px;
+  transition: border-color var(--transition);
+}
+
+.infoLink:hover {
+  border-color: var(--color-gold);
+}
+
+.phoneSeparator {
+  width: 30px;
+  height: 1px;
+  background: var(--color-border);
+  margin: 2.5rem 0;
+}
+
+.phoneNumber {
+  display: block;
+  font-size: 1.8rem;
+  font-weight: 300;
+  letter-spacing: 0.04em;
+  color: var(--color-text);
+  transition: color var(--transition);
+}
+
+.phoneNumber:hover {
+  color: var(--color-gold);
+}
+
+/* ─── Responsive ─── */
+@media (max-width: 900px) {
+  .featureBlock {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+    margin-bottom: 4rem;
+  }
+
+  /* Force image to be on top on mobile even if text is left on desktop */
+  .featureBlock>.framed-image-container {
+    order: -1;
   }
 
   .info {
     grid-template-columns: 1fr;
+    gap: 0;
+    padding: 3rem var(--container-padding);
+  }
+}
+
+@media (max-width: 768px) {
+  .hero {
+    grid-template-columns: 1fr;
+    min-height: auto;
+    margin: 2rem var(--container-padding) 4rem;
+    gap: 3rem;
   }
 
-  .cta {
+  .heroLogo {
+    margin: 0 auto 1.5rem;
+  }
+
+  .heroContent {
+    text-align: center;
+    align-items: center;
+    order: -1;
+  }
+
+  .heroDivider {
+    margin: 0 auto 1.5rem;
+  }
+
+  .heroCta {
+    justify-content: center;
     flex-direction: column;
     width: 100%;
+    max-width: 260px;
+    margin: 0 auto;
   }
 
   .ctaPrimary,
   .ctaSecondary {
     text-align: center;
+    width: 100%;
+  }
+
+  .featureHeading {
+    font-size: 2.2rem;
   }
 }

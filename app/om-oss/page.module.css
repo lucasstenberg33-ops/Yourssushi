@@ -1,41 +1,92 @@
 .page {
-  max-width: 700px;
-  margin: 0 auto;
-  padding: 3rem 1.5rem;
+  min-height: 100vh;
+}
+
+.heroBlock {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  max-width: var(--max-width);
+  margin: 4rem auto 6rem;
+  gap: 4rem;
+  align-items: center;
+  padding: 0 var(--container-padding);
+}
+
+.heroTextWrap {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.label {
+  display: block;
+  font-size: 0.65rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--color-primary);
+  margin-bottom: 1.5rem;
+  font-weight: 500;
 }
 
 .title {
-  font-size: 2rem;
-  color: var(--color-burgundy);
+  font-family: var(--font-display);
+  font-size: 3.5rem;
+  font-weight: 500;
+  color: var(--color-text);
   margin-bottom: 1.5rem;
 }
 
-.text {
-  font-size: 1.05rem;
+.heroText {
+  font-size: 1.15rem;
   line-height: 1.8;
-  color: var(--color-black);
-  margin-bottom: 3rem;
+  color: var(--color-text);
+}
+
+.content {
+  max-width: 700px;
+  margin: 0 auto;
+  padding: 4rem var(--container-padding) var(--section-padding);
 }
 
 .map {
-  padding: 2rem;
-  border: 1px solid var(--color-light-gray);
-  border-radius: 8px;
+  padding: 2.5rem;
+  background: var(--color-bg-card);
+  border: 1px solid var(--color-border);
 }
 
-.map h2 {
-  font-size: 1.1rem;
-  color: var(--color-burgundy);
-  margin-bottom: 0.75rem;
+.address {
+  font-size: 1rem;
+  color: var(--color-text);
+  margin-bottom: 1rem;
 }
 
 .mapLink {
   display: inline-block;
-  margin-top: 0.75rem;
-  color: var(--color-crimson);
-  font-weight: 500;
+  color: var(--color-primary);
+  font-size: 0.8rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  border-bottom: 1px solid rgba(107, 67, 49, 0.3);
+  padding-bottom: 2px;
+  transition: border-color var(--transition);
 }
 
 .mapLink:hover {
-  text-decoration: underline;
+  border-color: var(--color-primary);
+}
+
+@media (max-width: 768px) {
+  .heroBlock {
+    grid-template-columns: 1fr;
+    gap: 3rem;
+    margin-top: 2rem;
+  }
+
+  .title {
+    font-size: 2.5rem;
+  }
+
+  .heroText {
+    font-size: 1rem;
+  }
 }

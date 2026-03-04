@@ -1,0 +1,19 @@
+{
+    "name": "remotion-bg",
+    "version": "1.0.0",
+    "description": "Background loop for Yours Sushi",
+    "scripts": {
+        "start": "remotion studio",
+        "build": "remotion render Root BackgroundLoop public/bg-loop.mp4"
+    },
+    "dependencies": {
+        "react": "^18.0.0",
+        "react-dom": "^18.0.0",
+        "remotion": "^4.0.0"
+    },
+    "devDependencies": {
+        "@remotion/cli": "^4.0.432",
+        "@types/react": "^18.0.0",
+        "typescript": "^5.0.0"
+    }
+}

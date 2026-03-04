@@ -1,0 +1,229 @@
+.loading {
+  text-align: center;
+  padding: 4rem;
+  color: var(--color-text-muted);
+}
+
+.page {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: 2rem 1.5rem;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 2rem;
+}
+
+.header h1 {
+  color: var(--color-text);
+  font-size: 1.5rem;
+}
+
+.actions {
+  display: flex;
+  gap: 0.75rem;
+  align-items: center;
+}
+
+.back {
+  color: var(--color-text-muted);
+  font-size: 0.9rem;
+  text-decoration: none;
+}
+
+.back:hover {
+  color: var(--color-gold);
+}
+
+.saveBtn {
+  padding: 0.6rem 1.5rem;
+  background: var(--color-gold);
+  color: var(--color-bg);
+  border: none;
+  font-family: var(--font-body);
+  font-weight: 500;
+  cursor: pointer;
+  transition: background 0.2s;
+  font-size: 0.85rem;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+}
+
+.saveBtn:disabled {
+  opacity: 0.5;
+}
+
+.saveBtn:hover:not(:disabled) {
+  background: var(--color-gold-muted);
+}
+
+.category {
+  margin-bottom: 2rem;
+  padding: 1.5rem;
+  border: 1px solid var(--color-border);
+  background: var(--color-bg-card);
+}
+
+.catHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1rem;
+}
+
+.catNameInput {
+  font-size: 1.1rem;
+  font-weight: 500;
+  border: none;
+  border-bottom: 1px solid var(--color-border);
+  padding: 0.25rem 0;
+  font-family: var(--font-body);
+  flex: 1;
+  margin-right: 1rem;
+  background: transparent;
+  color: var(--color-text);
+}
+
+.catNameInput:focus {
+  outline: none;
+  border-color: var(--color-gold-muted);
+}
+
+.removeBtn {
+  color: var(--color-crimson);
+  background: none;
+  border: none;
+  font-size: 0.85rem;
+  cursor: pointer;
+  font-family: var(--font-body);
+}
+
+.item {
+  margin-bottom: 0.75rem;
+  padding-bottom: 0.75rem;
+  border-bottom: 1px solid var(--color-border);
+}
+
+.item:last-of-type {
+  border-bottom: none;
+}
+
+.itemRow {
+  display: grid;
+  grid-template-columns: 1fr 2fr 80px 32px;
+  gap: 0.5rem;
+  align-items: center;
+}
+
+.input,
+.priceInput {
+  padding: 0.5rem;
+  border: 1px solid var(--color-border);
+  font-size: 0.9rem;
+  font-family: var(--font-body);
+  background: var(--color-bg-elevated);
+  color: var(--color-text);
+}
+
+.input:focus,
+.priceInput:focus {
+  outline: none;
+  border-color: var(--color-gold-muted);
+}
+
+.priceInput {
+  text-align: right;
+}
+
+.removeItemBtn {
+  background: none;
+  border: none;
+  font-size: 1.2rem;
+  color: var(--color-text-muted);
+  cursor: pointer;
+  padding: 0;
+}
+
+.removeItemBtn:hover {
+  color: var(--color-crimson);
+}
+
+.tagRow {
+  display: flex;
+  gap: 0.35rem;
+  margin-top: 0.4rem;
+}
+
+.tagBtn {
+  padding: 0.25rem 0.6rem;
+  border: 1px solid var(--color-border);
+  background: transparent;
+  font-size: 0.75rem;
+  font-family: var(--font-body);
+  cursor: pointer;
+  transition: all 0.2s;
+  color: var(--color-text-muted);
+}
+
+.tagBtn:hover {
+  border-color: var(--color-gold-muted);
+}
+
+.tagActive {
+  background: var(--color-gold-glow);
+  border-color: var(--color-gold-muted);
+  color: var(--color-gold);
+}
+
+.addBtn {
+  margin-top: 0.75rem;
+  padding: 0.5rem 1rem;
+  background: none;
+  border: 1px dashed var(--color-border);
+  cursor: pointer;
+  font-family: var(--font-body);
+  color: var(--color-text-muted);
+  width: 100%;
+  transition: all 0.2s;
+}
+
+.addBtn:hover {
+  border-color: var(--color-gold-muted);
+  color: var(--color-gold);
+}
+
+.addCatBtn {
+  padding: 0.75rem;
+  background: none;
+  border: 2px dashed var(--color-border);
+  cursor: pointer;
+  font-family: var(--font-body);
+  color: var(--color-text-muted);
+  width: 100%;
+  font-size: 1rem;
+  transition: all 0.2s;
+}
+
+.addCatBtn:hover {
+  border-color: var(--color-gold-muted);
+  color: var(--color-gold);
+}
+
+@media (max-width: 768px) {
+  .itemRow {
+    grid-template-columns: 1fr;
+  }
+
+  .header {
+    flex-direction: column;
+    gap: 1rem;
+    align-items: flex-start;
+  }
+
+  .tagRow {
+    flex-wrap: wrap;
+  }
+}

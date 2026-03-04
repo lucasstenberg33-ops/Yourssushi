@@ -10,6 +10,7 @@ const links = [
   { href: '/', label: 'Hem' },
   { href: '/meny', label: 'Meny' },
   { href: '/om-oss', label: 'Om oss' },
+  { href: '/omdomen-faq', label: 'Omdömen & FAQ' },
   { href: '/kontakt', label: 'Kontakt' },
 ];
 
