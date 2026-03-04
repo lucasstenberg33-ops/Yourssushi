@@ -48,10 +48,10 @@ export default function MenyPage() {
   const [activeTag, setActiveTag] = useState<string | null>(null);
 
   useEffect(() => {
-    fetch('/api/menu')
+    fetch('/data/menu.json')
       .then((r) => r.json())
       .then((data) => setMenu(data));
-    fetch('/api/contact')
+    fetch('/data/contact.json')
       .then((r) => r.json())
       .then((data) => setContact(data));
   }, []);
