@@ -1,0 +1,11 @@
+{
+    "name": "yourssushi",
+    "compatibility_date": "2024-03-04",
+    "compatibility_flags": [
+        "nodejs_compat"
+    ],
+    "main": ".vercel/output/static/_worker.js/index.js",
+    "assets": {
+        "directory": ".vercel/output/static"
+    }
+}
