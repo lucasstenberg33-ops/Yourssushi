@@ -1,11 +1,12 @@
 import { NextResponse } from 'next/server';
+import menuData from '@/data/menu.json';
 
 export const runtime = 'edge';
 
 export async function GET() {
-  return NextResponse.json({ message: 'API not available in edge mode' }, { status: 503 });
+  return NextResponse.json(menuData);
 }
 
 export async function PUT() {
-  return NextResponse.json({ message: 'API not available in edge mode' }, { status: 503 });
+  return NextResponse.json({ message: 'Editing not available in cloud mode' }, { status: 503 });
 }
