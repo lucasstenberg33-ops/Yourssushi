@@ -159,7 +159,7 @@ export default function Home() {
         <FadeIn direction="left" delay={0.2} className="overlap-gallery">
           <div className="overlap-main">
             <Image
-              src="/pokebowl.png"
+              src="/Just_the_bowl_wood_table_kartong_bowl_2k_delpmaspu.png"
               alt="Sushi Bowl Takeaway"
               fill
               sizes="(max-width: 768px) 100vw, 50vw"
@@ -167,7 +167,7 @@ export default function Home() {
           </div>
           <div className="overlap-secondary overlap-top-left overlap-portrait">
             <Image
-              src="/Smaller_cuts_of_salmon_that_looks_marinated__2k_delpmaspu.png"
+              src="/pokebowl.png"
               alt="Salmon Nigiri Detail"
               fill
               sizes="(max-width: 768px) 50vw, 30vw"
