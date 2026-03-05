@@ -1,6 +1,5 @@
 import { NextResponse } from 'next/server';
 import { getRequestContext } from '@cloudflare/next-on-pages';
-import fallbackData from '../../../data/menu.json';
 
 export const runtime = 'edge';
 
@@ -17,6 +16,12 @@ export async function GET() {
   } catch (error) {
     // Fallback to local data if KV is unavailable (e.g. dev environment)
   }
+
+  // If KV is empty or unavailable, fetch the static JSON file
+  const baseUrl = process.env.NEXT_PUBLIC_API_URL || 'https://sushinet.se';
+  const res = await fetch(`${baseUrl}/data/menu.json`);
+  const fallbackData = await res.json();
+
   return NextResponse.json(fallbackData);
 }
 

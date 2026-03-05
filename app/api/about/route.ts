@@ -1,6 +1,5 @@
 import { NextResponse } from 'next/server';
 import { getRequestContext } from '@cloudflare/next-on-pages';
-import fallbackData from '../../../data/about.json';
 
 export const runtime = 'edge';
 
