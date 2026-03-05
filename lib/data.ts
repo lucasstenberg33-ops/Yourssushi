@@ -1,53 +1,54 @@
-// This utility file now uses edge-compatible fetch requests internally
-// rather than using Node.js 'fs' module which crashes on Cloudflare.
+import { getRequestContext } from '@cloudflare/next-on-pages';
 
-const API_BASE = process.env.NEXT_PUBLIC_API_URL || 'https://sushinet.se';
-
-// If called on the server/edge, we must ensure absolute URLs. 
-const getUrl = (path: string) => {
-  if (typeof window === 'undefined') {
-    return `${API_BASE}${path}`;
-  }
-  return path;
+// Utility to get base URL for static assets
+const getBaseUrl = () => {
+  if (typeof window !== 'undefined') return '';
+  return process.env.NEXT_PUBLIC_API_URL || 'https://sushinet.se';
 };
 
-async function safeFetch(apiPath: string, staticPath: string, defaultData: any) {
-  try {
-    // 1. Try API first
-    const res = await fetch(getUrl(apiPath), { next: { revalidate: 0 } });
-    if (res.ok) return await res.json();
-  } catch (e) {
-    console.error(`API fetch failed for ${apiPath}:`, e);
+async function getData(key: string, staticPath: string, defaultData: any) {
+  // 1. Try KV directly if on server
+  if (typeof window === 'undefined') {
+    try {
+      const ctx = getRequestContext();
+      const kv = ctx.env.DATA_KV as any;
+      if (kv) {
+        const data = await kv.get(key);
+        if (data) return JSON.parse(data);
+      }
+    } catch (e) {
+      console.error(`KV access failed for ${key}:`, e);
+    }
   }
 
+  // 2. Fallback to static JSON fetch (absolute for server, relative for client)
   try {
-    // 2. Fallback to direct static JSON fetch
-    const res = await fetch(getUrl(staticPath), { next: { revalidate: 0 } });
+    const url = typeof window === 'undefined' ? `${getBaseUrl()}${staticPath}` : staticPath;
+    const res = await fetch(url, { next: { revalidate: 0 } });
     if (res.ok) return await res.json();
   } catch (e) {
     console.error(`Static fallback failed for ${staticPath}:`, e);
   }
 
-  // 3. Last resort: default data
   return defaultData;
 }
 
 export async function getMenu() {
-  return safeFetch('/api/menu', '/data/menu.json', { categories: [] });
+  return getData('menu', '/data/menu.json', { categories: [] });
 }
 
 export async function getHours() {
-  return safeFetch('/api/hours', '/data/hours.json', []);
+  return getData('hours', '/data/hours.json', []);
 }
 
 export async function getContact() {
-  return safeFetch('/api/contact', '/data/contact.json', {
+  return getData('contact', '/data/contact.json', {
     address: 'Tegelviksgatan 45, 116 47 Stockholm',
     phone: '08-641 75 05'
   });
 }
 
 export async function getAbout() {
-  return safeFetch('/api/about', '/data/about.json', { title: 'Om oss', text: '' });
+  return getData('about', '/data/about.json', { title: 'Om oss', text: '' });
 }
 
