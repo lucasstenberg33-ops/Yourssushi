@@ -1,3 +1,5 @@
+export const runtime = 'edge';
+
 import Image from 'next/image';
 import { getAbout, getContact } from '@/lib/data';
 import FadeIn from '@/components/FadeIn';

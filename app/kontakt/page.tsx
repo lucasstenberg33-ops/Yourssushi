@@ -1,3 +1,5 @@
+export const runtime = 'edge';
+
 import { getContact, getHours } from '@/lib/data';
 import FadeIn from '@/components/FadeIn';
 import styles from './page.module.css';
