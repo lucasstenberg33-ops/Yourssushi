@@ -5,22 +5,20 @@ const getBaseUrl = () => {
 };
 
 async function getData(key: string, staticPath: string, defaultData: any) {
-  // Temporarily disabling KV and getRequestContext to isolate 500 error
-  /*
+  // Try KV first (server-side only)
   if (typeof window === 'undefined') {
     try {
-      const { getRequestContext } = await import('@cloudflare/next-on-pages');
-      const ctx = getRequestContext();
-      if (ctx && ctx.env && ctx.env.DATA_KV) {
-        const kv = ctx.env.DATA_KV as any;
+      const { getCloudflareContext } = await import('@opennextjs/cloudflare');
+      const { env } = await getCloudflareContext();
+      if (env.DATA_KV) {
+        const kv = env.DATA_KV as any;
         const data = await kv.get(key);
         if (data) return JSON.parse(data);
       }
     } catch (e) {
-      console.error(`KV access failed for ${key}:`, e);
+      // KV unavailable, fall through to fetch
     }
   }
-  */
 
   // Fallback to static JSON fetch (absolute for server, relative for client)
   try {
@@ -52,4 +50,3 @@ export async function getContact() {
 export async function getAbout() {
   return getData('about', '/data/about.json', { title: 'Om oss', text: '' });
 }
-

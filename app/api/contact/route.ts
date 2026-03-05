@@ -1,20 +1,18 @@
 import { NextResponse } from 'next/server';
-import { getRequestContext } from '@cloudflare/next-on-pages';
-
-export const runtime = 'edge';
+import { getCloudflareContext } from '@opennextjs/cloudflare';
 
 export async function GET() {
     try {
-        const ctx = getRequestContext();
-        if (ctx && ctx.env && ctx.env.DATA_KV) {
-            const kv = ctx.env.DATA_KV as any;
+        const { env } = await getCloudflareContext();
+        if (env.DATA_KV) {
+            const kv = env.DATA_KV as any;
             const data = await kv.get('contact');
             if (data) {
                 return NextResponse.json(JSON.parse(data));
             }
         }
     } catch (error) {
-        // Fallback to local data if KV is unavailable (e.g. dev environment)
+        // Fallback to local data if KV is unavailable
     }
     try {
         const baseUrl = process.env.NEXT_PUBLIC_API_URL || 'https://sushinet.se';
@@ -29,9 +27,9 @@ export async function GET() {
 export async function PUT(request: Request) {
     try {
         const data = await request.json();
-        const ctx = getRequestContext();
-        if (ctx && ctx.env && ctx.env.DATA_KV) {
-            const kv = ctx.env.DATA_KV as any;
+        const { env } = await getCloudflareContext();
+        if (env.DATA_KV) {
+            const kv = env.DATA_KV as any;
             await kv.put('contact', JSON.stringify(data));
             return NextResponse.json({ success: true });
         }
@@ -40,4 +38,3 @@ export async function PUT(request: Request) {
         return NextResponse.json({ error: 'Failed to update KV' }, { status: 500 });
     }
 }
-

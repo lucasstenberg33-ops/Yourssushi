@@ -1,5 +1,3 @@
-export const runtime = 'edge';
-
 import Reviews from '@/components/Reviews';
 import FAQ from '@/components/FAQ';
 import FadeIn from '@/components/FadeIn';
