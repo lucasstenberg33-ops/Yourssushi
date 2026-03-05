@@ -6,8 +6,8 @@ export const runtime = 'edge';
 export async function GET() {
     try {
         const ctx = getRequestContext();
-        const kv = ctx.env.DATA_KV as any;
-        if (kv) {
+        if (ctx && ctx.env && ctx.env.DATA_KV) {
+            const kv = ctx.env.DATA_KV as any;
             const data = await kv.get('hours');
             if (data) {
                 return NextResponse.json(JSON.parse(data));
@@ -26,8 +26,8 @@ export async function PUT(request: Request) {
     try {
         const data = await request.json();
         const ctx = getRequestContext();
-        const kv = ctx.env.DATA_KV as any;
-        if (kv) {
+        if (ctx && ctx.env && ctx.env.DATA_KV) {
+            const kv = ctx.env.DATA_KV as any;
             await kv.put('hours', JSON.stringify(data));
             return NextResponse.json({ success: true });
         }
