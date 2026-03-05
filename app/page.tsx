@@ -159,7 +159,7 @@ export default function Home() {
         <FadeIn direction="left" delay={0.2} className="overlap-gallery">
           <div className="overlap-main">
             <Image
-              src="/Just_the_bowl_wood_table_kartong_bowl_2k_delpmaspu.png"
+              src="/pokebowl.png"
               alt="Sushi Bowl Takeaway"
               fill
               sizes="(max-width: 768px) 100vw, 50vw"
