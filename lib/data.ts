@@ -1,5 +1,3 @@
-import { getRequestContext } from '@cloudflare/next-on-pages';
-
 // Utility to get base URL for static assets
 const getBaseUrl = () => {
   if (typeof window !== 'undefined') return '';
@@ -7,9 +5,11 @@ const getBaseUrl = () => {
 };
 
 async function getData(key: string, staticPath: string, defaultData: any) {
-  // 1. Try KV directly if on server
+  // Temporarily disabling KV and getRequestContext to isolate 500 error
+  /*
   if (typeof window === 'undefined') {
     try {
+      const { getRequestContext } = await import('@cloudflare/next-on-pages');
       const ctx = getRequestContext();
       if (ctx && ctx.env && ctx.env.DATA_KV) {
         const kv = ctx.env.DATA_KV as any;
@@ -20,8 +20,9 @@ async function getData(key: string, staticPath: string, defaultData: any) {
       console.error(`KV access failed for ${key}:`, e);
     }
   }
+  */
 
-  // 2. Fallback to static JSON fetch (absolute for server, relative for client)
+  // Fallback to static JSON fetch (absolute for server, relative for client)
   try {
     const url = typeof window === 'undefined' ? `${getBaseUrl()}${staticPath}` : staticPath;
     const res = await fetch(url, { next: { revalidate: 0 } });
