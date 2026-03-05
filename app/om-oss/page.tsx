@@ -19,26 +19,6 @@ export default function OmOss() {
           <h1 className={styles.title}>{about.title || 'Om Oss'}</h1>
           <p className={styles.heroText}>{about.text}</p>
         </FadeIn>
-        <FadeIn direction="left" delay={0.2} className="overlap-gallery">
-          <div className="overlap-main">
-            <Image
-              src="/Imagetoimage_enhancement_using_the_provided_refere_delpmaspu.png"
-              alt="Yours Sushi Restaurang"
-              fill
-              priority
-              sizes="(max-width: 768px) 100vw, 50vw"
-            />
-          </div>
-          <div className="overlap-secondary overlap-top-left overlap-portrait">
-            <Image
-              src="/Just_the_bowl_wood_table_kartong_bowl_2k_delpmaspu.png"
-              alt="Sushi Bowl"
-              fill
-              priority
-              sizes="(max-width: 768px) 50vw, 30vw"
-            />
-          </div>
-        </FadeIn>
       </section>
 
       <FadeIn direction="up" className={styles.content}>
