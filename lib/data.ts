@@ -11,8 +11,8 @@ async function getData(key: string, staticPath: string, defaultData: any) {
   if (typeof window === 'undefined') {
     try {
       const ctx = getRequestContext();
-      const kv = ctx.env.DATA_KV as any;
-      if (kv) {
+      if (ctx && ctx.env && ctx.env.DATA_KV) {
+        const kv = ctx.env.DATA_KV as any;
         const data = await kv.get(key);
         if (data) return JSON.parse(data);
       }
