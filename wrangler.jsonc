@@ -11,7 +11,7 @@
     "kv_namespaces": [
         {
             "binding": "DATA_KV",
-            "id": "REPLACE_WITH_YOUR_KV_NAMESPACE_ID"
+            "id": "d40f20d3a1cf416b9cb1cc92fb39cb95"
         }
     ]
 }
