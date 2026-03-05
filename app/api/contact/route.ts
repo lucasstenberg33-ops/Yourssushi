@@ -1,12 +1,37 @@
 import { NextResponse } from 'next/server';
-import contactData from '../../../data/contact.json';
+import { getRequestContext } from '@cloudflare/next-on-pages';
+import fallbackData from '../../../data/contact.json';
 
 export const runtime = 'edge';
 
 export async function GET() {
-    return NextResponse.json(contactData);
+    try {
+        const ctx = getRequestContext();
+        const kv = ctx.env.DATA_KV as any;
+        if (kv) {
+            const data = await kv.get('contact');
+            if (data) {
+                return NextResponse.json(JSON.parse(data));
+            }
+        }
+    } catch (error) {
+        // Fallback to local data if KV is unavailable (e.g. dev environment)
+    }
+    return NextResponse.json(fallbackData);
 }
 
-export async function PUT() {
-    return NextResponse.json({ message: 'Editing not available in cloud mode' }, { status: 503 });
+export async function PUT(request: Request) {
+    try {
+        const data = await request.json();
+        const ctx = getRequestContext();
+        const kv = ctx.env.DATA_KV as any;
+        if (kv) {
+            await kv.put('contact', JSON.stringify(data));
+            return NextResponse.json({ success: true });
+        }
+        return NextResponse.json({ error: 'KV database not found' }, { status: 500 });
+    } catch (error) {
+        return NextResponse.json({ error: 'Failed to update KV' }, { status: 500 });
+    }
 }
+

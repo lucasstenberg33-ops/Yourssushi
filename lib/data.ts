@@ -1,47 +1,34 @@
-import { readFileSync, writeFileSync } from 'fs';
-import path from 'path';
+// This utility file now uses edge-compatible fetch requests internally
+// rather than using Node.js 'fs' module which crashes on Cloudflare.
 
-const dataDir = path.join(process.cwd(), 'data');
+const API_BASE = process.env.NEXT_PUBLIC_API_URL || 'https://sushinet.se';
 
-function readJson(filename: string) {
-  const filePath = path.join(dataDir, filename);
-  const raw = readFileSync(filePath, 'utf-8');
-  return JSON.parse(raw);
+// If called on the server/edge, we must ensure absolute URLs. 
+// If called on the client, relative URLs (/api/...) work fine.
+const getUrl = (path: string) => {
+  if (typeof window === 'undefined') {
+    return `${API_BASE}${path}`;
+  }
+  return path;
+};
+
+export async function getMenu() {
+  const res = await fetch(getUrl('/api/menu'), { next: { revalidate: 0 } });
+  return res.json();
 }
 
-function writeJson(filename: string, data: unknown) {
-  const filePath = path.join(dataDir, filename);
-  writeFileSync(filePath, JSON.stringify(data, null, 2), 'utf-8');
+export async function getHours() {
+  const res = await fetch(getUrl('/api/hours'), { next: { revalidate: 0 } });
+  return res.json();
 }
 
-export function getMenu() {
-  return readJson('menu.json');
+export async function getContact() {
+  const res = await fetch(getUrl('/api/contact'), { next: { revalidate: 0 } });
+  return res.json();
 }
 
-export function saveMenu(data: unknown) {
-  writeJson('menu.json', data);
+export async function getAbout() {
+  const res = await fetch(getUrl('/api/about'), { next: { revalidate: 0 } });
+  return res.json();
 }
 
-export function getHours() {
-  return readJson('hours.json');
-}
-
-export function saveHours(data: unknown) {
-  writeJson('hours.json', data);
-}
-
-export function getContact() {
-  return readJson('contact.json');
-}
-
-export function saveContact(data: unknown) {
-  writeJson('contact.json', data);
-}
-
-export function getAbout() {
-  return readJson('about.json');
-}
-
-export function saveAbout(data: unknown) {
-  writeJson('about.json', data);
-}

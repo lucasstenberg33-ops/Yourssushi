@@ -3,9 +3,9 @@ import { getAbout, getContact } from '@/lib/data';
 import FadeIn from '@/components/FadeIn';
 import styles from './page.module.css';
 
-export default function OmOss() {
-  const about = getAbout() as { title: string; text: string };
-  const contact = getContact() as {
+export default async function OmOss() {
+  const about = await getAbout() as { title: string; text: string };
+  const contact = await getContact() as {
     address: string;
     phone: string;
     googleMapsUrl: string;

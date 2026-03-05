@@ -12,15 +12,15 @@ const dayMap: Record<string, number> = {
   Lördag: 6,
 };
 
-export default function Kontakt() {
-  const contact = getContact() as {
+export default async function Kontakt() {
+  const contact = await getContact() as {
     address: string;
     phone: string;
     instagram?: string;
     website?: string;
     googleMapsUrl: string;
   };
-  const hours = getHours() as { day: string; hours: string }[];
+  const hours = await getHours() as { day: string; hours: string }[];
   const today = new Date().getDay();
 
   return (

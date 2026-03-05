@@ -14,9 +14,9 @@ const dayMap: Record<string, number> = {
   Lördag: 6,
 };
 
-export default function Home() {
-  const hours = getHours() as { day: string; hours: string }[];
-  const contact = getContact() as {
+export default async function Home() {
+  const hours = await getHours() as { day: string; hours: string }[];
+  const contact = await getContact() as {
     address: string;
     phone: string;
     googleMapsUrl: string;

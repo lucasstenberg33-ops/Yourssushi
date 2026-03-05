@@ -2,8 +2,8 @@ import Link from 'next/link';
 import { getContact } from '@/lib/data';
 import styles from './Footer.module.css';
 
-export default function Footer() {
-  const contact = getContact() as {
+export default async function Footer() {
+  const contact = await getContact() as {
     address: string;
     phone: string;
     instagram?: string;
