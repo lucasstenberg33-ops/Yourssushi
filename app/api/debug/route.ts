@@ -1,12 +1,11 @@
-import { NextResponse } from 'next/server';
-
 export const runtime = 'edge';
 
 export async function GET() {
-    return NextResponse.json({
+    return new Response(JSON.stringify({
         status: "ok",
-        message: "Edge runtime is working",
-        time: new Date().toISOString()
+        message: "Edge runtime is working with plain Response"
+    }), {
+        headers: { "content-type": "application/json" }
     });
 }
 
