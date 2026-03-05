@@ -16,6 +16,9 @@ export async function GET() {
     } catch (error) {
         // Fallback to local data if KV is unavailable (e.g. dev environment)
     }
+    const baseUrl = process.env.NEXT_PUBLIC_API_URL || 'https://sushinet.se';
+    const res = await fetch(`${baseUrl}/data/about.json`);
+    const fallbackData = await res.json();
     return NextResponse.json(fallbackData);
 }
 
