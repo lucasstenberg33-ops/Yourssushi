@@ -20,11 +20,10 @@ export default function RootLayout({
   return (
     <html lang="sv">
       <body>
-
-        <StructuredData />
-        <Navbar />
+        {/* <StructuredData /> */}
+        {/* <Navbar /> */}
         <main>{children}</main>
-        <Footer />
+        {/* <Footer /> */}
       </body>
     </html>
   );
