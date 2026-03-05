@@ -25,7 +25,7 @@ async function getData(key: string, staticPath: string, defaultData: any) {
   // Fallback to static JSON fetch (absolute for server, relative for client)
   try {
     const url = typeof window === 'undefined' ? `${getBaseUrl()}${staticPath}` : staticPath;
-    const res = await fetch(url, { next: { revalidate: 0 } });
+    const res = await fetch(url);
     if (res.ok) return await res.json();
   } catch (e) {
     console.error(`Static fallback failed for ${staticPath}:`, e);
