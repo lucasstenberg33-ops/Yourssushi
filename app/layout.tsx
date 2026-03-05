@@ -17,12 +17,3 @@ export default function RootLayout({
     </html>
   );
 }
-<body>
-  {/* <StructuredData /> */}
-  {/* <Navbar /> */}
-  <main>{children}</main>
-  {/* <Footer /> */}
-</body>
-    </html >
-  );
-}
