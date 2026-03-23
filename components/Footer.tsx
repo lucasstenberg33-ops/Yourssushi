@@ -15,7 +15,7 @@ export default async function Footer() {
     <footer className={styles.footer}>
       <div className={styles.container}>
         <div className={styles.column}>
-          <h3>Yours Sushi & Woks</h3>
+          <h3>Yours Sushi & Wok</h3>
           <p>{contact.address}</p>
           <p><a href={`tel:${contact.phone.replace(/[^0-9+]/g, '')}`}>{contact.phone}</a></p>
           {contact.instagram && (
@@ -42,7 +42,7 @@ export default async function Footer() {
         </div>
       </div>
       <div className={styles.bottom}>
-        <p>&copy; {new Date().getFullYear()} Yours Sushi & Woks</p>
+        <p>&copy; {new Date().getFullYear()} Yours Sushi & Wok</p>
       </div>
     </footer>
   );

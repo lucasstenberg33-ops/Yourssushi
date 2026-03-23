@@ -2,7 +2,7 @@ export default function StructuredData() {
   const jsonLd = {
     '@context': 'https://schema.org',
     '@type': 'Restaurant',
-    name: 'Yours Sushi & Woks',
+    name: 'Yours Sushi & Wok',
     image: '/logo.svg',
     address: {
       '@type': 'PostalAddress',
